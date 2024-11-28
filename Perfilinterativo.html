@@ -35,41 +35,57 @@
     </div>
     
     <script>
-        function alterarNome(){
-            const novoNome = prompt("Digite o novo nome:");
-            if (novoNome){
-                document.getElementById("profileName").textContent = "Nome: " + novoNome;
-            }
-        }
-       
-        function alterarIdade(){
-            const novaIdade = prompt("Digite a nova idade:");
-            if (novaIdade){
-                document.getElementById("profileAge").textContent = "Idade: " + novaIdade;
-            }
-        }        
+       // Função para alterar o nome do perfil
+function alterarNome(){
+    // Solicita ao usuário um novo nome através de um prompt
+    const novoNome = prompt("Digite o novo nome:");
+    // Se o usuário fornecer um nome, atualiza o conteúdo do elemento com id "profileName"
+    if (novoNome){
+        document.getElementById("profileName").textContent = "Nome: " + novoNome;
+    }
+}
 
-        function adicionarHobby(){
-            const novoHobby = prompt("Digite um novo hobby");
-            if(novoHobby){
-                const li = document.createElement("li");
-                li.textContent = novoHobby;
-                li.className = "list-group-item";
-                document.getElementById("hobbiesList").appendChild(li);
-            }
-        }
+// Função para alterar a idade do perfil
+function alterarIdade(){
+    // Solicita ao usuário uma nova idade através de um prompt
+    const novaIdade = prompt("Digite a nova idade:");
+    // Se o usuário fornecer uma idade, atualiza o conteúdo do elemento com id "profileAge"
+    if (novaIdade){
+        document.getElementById("profileAge").textContent = "Idade: " + novaIdade;
+    }
+}        
 
-                function removerHobby(li){
-                document.getElementById("hobbiesList").removeChild(li);
-            }
+// Função para adicionar um novo hobby à lista
+function adicionarHobby(){
+    // Solicita ao usuário um novo hobby através de um prompt
+    const novoHobby = prompt("Digite um novo hobby");
+    // Se o usuário fornecer um hobby, cria um novo item de lista (li) e adiciona à lista de hobbies
+    if(novoHobby){
+        const li = document.createElement("li");
+        li.textContent = novoHobby;
+        li.className = "list-group-item"; // Atribui uma classe para estilo do item
+        document.getElementById("hobbiesList").appendChild(li); // Adiciona o item à lista de hobbies
+    }
+}
 
-        function mudarCorDeFundo(){
-            const cores = ["#f8de7da", "#dlecfl", "#d4edda", "#fff3cd", "#cce5ff"];
+// Função para remover um hobby da lista (não utilizada no código atual)
+function removerHobby(li){
+    // Remove um item da lista de hobbies
+    document.getElementById("hobbiesList").removeChild(li);
+}
 
-            const corAleatoria = cores[Math.floor(Math.random ()*cores.length)];
+// Função para mudar a cor de fundo do cartão de perfil
+function mudarCorDeFundo(){
+    // Define um array de cores possíveis para o fundo
+    const cores = ["#f8de7da", "#dlecfl", "#d4edda", "#fff3cd", "#cce5ff"];
 
-            document.getElementById("profileCard").style.backgroundColor = corAleatoria;
-        }
+    // Escolhe uma cor aleatória do array de cores
+    const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+
+    // Aplica a cor escolhida como fundo do cartão de perfil
+    document.getElementById("profileCard").style.backgroundColor = corAleatoria;
+}
+
 
 
     </script>
